@@ -1,0 +1,46 @@
+{
+    "name": "@microsoft/kiota-serialization-json",
+    "version": "1.0.0-preview.8",
+    "description": "Implementation of Kiota Serialization interfaces for JSON",
+    "main": "dist/cjs/src/index.js",
+    "browser": {
+        "./dist/es/src/index.js": "./dist/es/src/browser/index.js",
+        "./dist/es/src/jsonParseNodeFactory.js": "./dist/es/src/browser/jsonParseNodeFactory.js"
+    },
+    "module": "dist/es/src/index.js",
+    "types": "dist/cjs/src/index.d.ts",
+    "scripts": {
+        "build": "npm run build:cjs && npm run build:es",
+        "build:cjs": "tsc -b tsconfig.cjs.json",
+        "build:es": "tsc -b tsconfig.es.json",
+        "lint": "eslint . --ext .ts",
+        "lint:fix": "eslint . --ext .ts --fix",
+        "clean": "rm -r ./dist",
+        "karma": "npm run rollup && karma  start --single-run --browsers ChromeHeadless karma.conf.js",
+        "rollup": "rollup -c",
+        "test": "npm run test:cjs && npm run test:es && npm run karma",
+        "test:cjs": "npm run build:cjs && mocha  'dist/cjs/test/common/**/*.js'",
+        "test:es": " npm run build:es && mocha 'dist/es/test/common/**/*.js'  --require  esm"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/microsoft/kiota-typescript.git"
+    },
+    "keywords": [
+        "kiota",
+        "openAPI",
+        "Microsoft",
+        "Graph",
+        "JSON"
+    ],
+    "author": "Microsoft",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/microsoft/kiota-typescript/issues"
+    },
+    "homepage": "https://github.com/microsoft/kiota-typescript#readme",
+    "dependencies": {
+        "@microsoft/kiota-abstractions": "1.0.0-preview.6",
+        "tslib": "^2.3.1"
+    }
+}
