@@ -1,7 +1,7 @@
 # Project
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+> Este repositório foi preenchido por um modelo inicial para ajudar você a começar. 
+> Certifique-se de atualizar o conteúdo para criar uma ótima experiência para a construção da comunidade.
 
 As the maintainer of this project, please make a few updates:
 
